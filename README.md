@@ -14,27 +14,16 @@ This extension requires:
 Through Composer
 ~~~~~~~~~~~~~~~~
 
-The easiest way to keep your suite updated is to use `Composer <http://getcomposer.org>`_:
+The easiest way to manage your dependencies is to use `Composer <http://getcomposer.org>`_:
 
-1. Define dependencies in your ``composer.json``:
 
-    .. code-block:: js
-
-        {
-            "require-dev": {
-                ...
-
-                "rmiller/phpspec-extension": "dev-master"
-            }
-        }
-
-2. Install/update your vendors:
+1. Require the extension:
 
     .. code-block:: bash
 
-        $ composer update rmiller/phpspec-extension
+        $ composer require --dev rmiller/phpspec-extension:dev-master
 
-3. Activate extension by specifying its class in your ``behat.yml``:
+2. Activate the extension by specifying its class in your ``behat.yml``:
 
     .. code-block:: yaml
 
