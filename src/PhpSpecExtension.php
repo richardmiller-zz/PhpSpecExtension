@@ -1,6 +1,6 @@
 <?php
 
-namespace RMiller\PhpSpecExtension\ServiceContainer;
+namespace RMiller;
 
 use Behat\Testwork\ServiceContainer\Extension as ExtensionInterface;
 use Behat\Testwork\ServiceContainer\ExtensionManager;
@@ -18,7 +18,7 @@ class PhpSpecExtension implements ExtensionInterface
     public function load(ContainerBuilder $container, array $config)
     {
         $loader = new XmlFileLoader($container, new FileLocator(__DIR__));
-        $loader->load('core.xml');
+        $loader->load('services.xml');
 
         $container->setParameter('phpspec_extension.path', $config['path']);
     }
