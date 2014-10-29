@@ -42,5 +42,5 @@ The easiest way to keep your suite updated is to use `Composer <http://getcompos
         default:
           # ...
           extensions:
-            RMiller\PhpSpecExtension:
+            RMiller\PhpSpecExtension\PhpSpecExtension:
               path:  bin/phpspec #default value is bin/phpspec
