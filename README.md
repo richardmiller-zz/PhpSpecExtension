@@ -19,17 +19,19 @@ The easiest way to manage your dependencies is to use Composer
 
 1. Require the extension:
 
-    .. code-block:: bash
+```
 
-        $ composer require --dev rmiller/phpspec-extension:dev-master
+    $ composer require --dev rmiller/phpspec-extension:dev-master
+```
 
 2. Activate the extension by specifying its class in your ``behat.yml``:
 
-    .. code-block:: yaml
+```yaml
 
-        # behat.yml
-        default:
-          # ...
-          extensions:
-            RMiller\PhpSpecExtension\PhpSpecExtension:
-              path:  bin/phpspec #default value is bin/phpspec
+    # behat.yml
+    default:
+      # ...
+      extensions:
+        RMiller\PhpSpecExtension\PhpSpecExtension:
+          path:  bin/phpspec #default value is bin/phpspec
+```
