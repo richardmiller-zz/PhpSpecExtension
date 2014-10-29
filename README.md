@@ -12,19 +12,15 @@ This extension requires:
 * PHP 5.4+
 
 Through Composer
-~~~~~~~~~~~~~~~~
+________________
 
 The easiest way to manage your dependencies is to use Composer
 
-
-1. Require the extension:
-
 ```
-
     $ composer require --dev rmiller/phpspec-extension:dev-master
 ```
 
-2. Activate the extension by specifying its class in your ``behat.yml``:
+Activate the extension by specifying its class in your ``behat.yml``:
 
 ```yaml
 
