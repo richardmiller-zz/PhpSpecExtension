@@ -14,7 +14,7 @@ This extension requires:
 Through Composer
 ~~~~~~~~~~~~~~~~
 
-The easiest way to manage your dependencies is to use `Composer <http://getcomposer.org>`_:
+The easiest way to manage your dependencies is to use Composer
 
 
 1. Require the extension:
