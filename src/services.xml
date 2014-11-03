@@ -42,10 +42,34 @@
             </argument>
         </service>
 
+        <service id="rmiller.phpspec_extension.exemplify_runner.pcntl" class="RMiller\PhpSpecExtension\Process\ExemplifyRunner\PlatformSpecificExemplifyRunner">
+            <argument type="service" id="rmiller.phpspec_extension.runner.pcntl"/>
+            <argument type="service" id="rmiller.phpspec_extension.executable_finder.caching"/>
+            <argument>%phpspec_extension.path%</argument>
+        </service>
+
+        <service id="rmiller.phpspec_extension.exemplify_runner.passthru" class="RMiller\PhpSpecExtension\Process\ExemplifyRunner\PlatformSpecificExemplifyRunner">
+            <argument type="service" id="rmiller.phpspec_extension.runner.passthru"/>
+            <argument type="service" id="rmiller.phpspec_extension.executable_finder.caching"/>
+            <argument>%phpspec_extension.path%</argument>
+        </service>
+
+        <service id="rmiller.phpspec_extension.exemplify_runner" class="RMiller\PhpSpecExtension\Process\ExemplifyRunner\CompositeExemplifyRunner">
+            <argument type="collection">
+                <argument type="service" id="rmiller.phpspec_extension.exemplify_runner.pcntl"/>
+                <argument type="service" id="rmiller.phpspec_extension.exemplify_runner.passthru"/>
+            </argument>
+        </service>
+
         <service id="rmiller.phpspec_extension.tester" class="RMiller\PhpSpecExtension\tester\PhpSpecTester">
             <argument/>
             <argument type="service" id="rmiller.phpspec_extension.desc_runner"/>
             <tag name="tester.suite.wrapper" priority="-9999"/>
+        </service>
+
+        <service id="rmiller.phpspec_extension.missing_method_observer" class="RMiller\PhpSpecExtension\ErrorObserver\MissingMethodErrorObserver">
+            <argument type="service" id="rmiller.phpspec_extension.exemplify_runner"/>
+            <tag name="rmiller.error_listener"/>
         </service>
 
     </services>
