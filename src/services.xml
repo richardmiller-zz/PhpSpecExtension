@@ -64,6 +64,7 @@
         <service id="rmiller.phpspec_extension.tester" class="RMiller\PhpSpecExtension\tester\PhpSpecTester">
             <argument/>
             <argument type="service" id="rmiller.phpspec_extension.desc_runner"/>
+            <argument type="service" id="cli.output"/>
             <tag name="tester.suite.wrapper" priority="-9999"/>
         </service>
 

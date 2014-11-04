@@ -53,7 +53,7 @@ class PlatformSpecificExemplifyRunner implements ExemplifyRunner
     {
         $this->commandRunner->runCommand(
             $this->executableFinder->getExecutablePath(),
-            [$this->phpspecPath, self::COMMAND_NAME, $className, $methodName]
+            [$this->phpspecPath, self::COMMAND_NAME, '--confirm', $className, $methodName]
         );
     }
 }
