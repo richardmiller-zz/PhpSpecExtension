@@ -19,12 +19,12 @@
         "symfony/process": "~2.1"
     },
     "require-dev": {
-        "rmiller/error-extension": "dev-master",
-        "rmiller/exemplify-extension": "dev-master"
+        "rmiller/error-extension": "~0.1",
+        "rmiller/exemplify-extension": "~0.1"
     },
     "suggests": {
-        "rmiller/error-extension": "dev-master",
-        "rmiller/exemplify-extension": "dev-master"
+        "rmiller/error-extension": "~0.1",
+        "rmiller/exemplify-extension": "~0.1"
     },
     "autoload": {
         "psr-4": { "RMiller\\PhpSpecExtension\\": "src/" }
