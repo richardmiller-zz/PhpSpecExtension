@@ -1,9 +1,14 @@
 PhpSpecExtension
 ================
 
-Behat extension to run phpspec desc command automatically for missing classes
+Behat extension to run phpspec desc command automatically for missing classes.
 
-This extension requires:
+For more explanation and additional related functionality see [BehatSpec](https://github.com/richardmiller/BehatSpec).
+Which uses this extension in combination with others to provide integration
+between [Behat](http://docs.behat.org/en/v3.0/) and [PhpSpec](http://phpspec.net/).
+
+
+If you do want to use this extension standalone, it requires:
 
 * Behat 3.0+
 * PHP 5.4+
