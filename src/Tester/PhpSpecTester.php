@@ -81,11 +81,13 @@ class PhpSpecTester implements SuiteTester
             $this->output->writeln($formattedBlock);
             $this->output->writeln('');
 
-            $question = sprintf('<question>Do you want to create a specification for %s? (Y/n)</question>', $class);
+            $question = sprintf('Do you want to create a specification for %s? (Y/n)', $class);
+            $questionBlock = $formatter->formatBlock($question, 'question', true);
 
             $dialog = new DialogHelper();
 
-            if ($dialog->askConfirmation($this->output, $question, true)) {
+            if ($dialog->askConfirmation($this->output, $questionBlock, true)) {
+                $this->output->writeln('');
                 $this->specRunner->runDescCommand($class);
             }
 
