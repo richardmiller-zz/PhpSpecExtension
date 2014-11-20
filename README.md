@@ -1,6 +1,9 @@
 PhpSpecExtension
 ================
 
+[![Scrutinizer Code Quality](https://scrutinizer-ci.com/g/richardmiller/PhpSpecExtension/badges/quality-score.png?b=master)](https://scrutinizer-ci.com/g/richardmiller/PhpSpecExtension/?branch=master)
+[![Build Status](https://scrutinizer-ci.com/g/richardmiller/PhpSpecExtension/badges/build.png?b=master)](https://scrutinizer-ci.com/g/richardmiller/PhpSpecExtension/build-status/master)
+
 Behat extension to run phpspec desc command automatically for missing classes.
 
 For more explanation and additional related functionality see [BehatSpec](https://github.com/richardmiller/BehatSpec).
