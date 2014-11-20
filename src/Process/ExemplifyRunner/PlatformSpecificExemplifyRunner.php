@@ -4,7 +4,6 @@ namespace RMiller\PhpSpecExtension\Process\ExemplifyRunner;
 
 use RMiller\PhpSpecExtension\Process\CachingExecutableFinder;
 use RMiller\PhpSpecExtension\Process\CommandRunner;
-use RMiller\PhpSpecExtension\Process\DescRunner;
 use RMiller\PhpSpecExtension\Process\ExemplifyRunner;
 
 class PlatformSpecificExemplifyRunner implements ExemplifyRunner
