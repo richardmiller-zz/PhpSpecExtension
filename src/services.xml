@@ -27,12 +27,14 @@
             <argument type="service" id="rmiller.phpspec_extension.runner.pcntl"/>
             <argument type="service" id="rmiller.phpspec_extension.executable_finder.caching"/>
             <argument>%phpspec_extension.path%</argument>
+            <argument>%phpspec_extension.config%</argument>
         </service>
 
         <service id="rmiller.phpspec_extension.desc_runner.passthru" class="RMiller\PhpSpecExtension\Process\DescRunner\PlatformSpecificDescRunner">
             <argument type="service" id="rmiller.phpspec_extension.runner.passthru"/>
             <argument type="service" id="rmiller.phpspec_extension.executable_finder.caching"/>
             <argument>%phpspec_extension.path%</argument>
+            <argument>%phpspec_extension.config%</argument>
         </service>
 
         <service id="rmiller.phpspec_extension.desc_runner" class="RMiller\PhpSpecExtension\Process\DescRunner\CompositeDescRunner">
@@ -46,12 +48,14 @@
             <argument type="service" id="rmiller.phpspec_extension.runner.pcntl"/>
             <argument type="service" id="rmiller.phpspec_extension.executable_finder.caching"/>
             <argument>%phpspec_extension.path%</argument>
+            <argument>%phpspec_extension.config%</argument>
         </service>
 
         <service id="rmiller.phpspec_extension.exemplify_runner.passthru" class="RMiller\PhpSpecExtension\Process\ExemplifyRunner\PlatformSpecificExemplifyRunner">
             <argument type="service" id="rmiller.phpspec_extension.runner.passthru"/>
             <argument type="service" id="rmiller.phpspec_extension.executable_finder.caching"/>
             <argument>%phpspec_extension.path%</argument>
+            <argument>%phpspec_extension.config%</argument>
         </service>
 
         <service id="rmiller.phpspec_extension.exemplify_runner" class="RMiller\PhpSpecExtension\Process\ExemplifyRunner\CompositeExemplifyRunner">

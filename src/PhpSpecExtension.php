@@ -21,6 +21,7 @@ class PhpSpecExtension implements ExtensionInterface
         $loader->load('services.xml');
 
         $container->setParameter('phpspec_extension.path', $config['path']);
+        $container->setParameter('phpspec_extension.config', $config['config']);
     }
 
     /**
@@ -32,6 +33,7 @@ class PhpSpecExtension implements ExtensionInterface
             ->addDefaultsIfNotSet()
             ->children()
                 ->scalarNode('path')->defaultValue('bin/phpspec')->end()
+                ->scalarNode('config')->defaultNull()->end()
             ->end()
         ->end();
     }
