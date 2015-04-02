@@ -16,6 +16,11 @@ class PlatformSpecificDescRunner implements DescRunner
     private $phpspecPath;
 
     /**
+     * @var string
+     */
+    private $phpspecConfig;
+
+    /**
      * @var CommandRunner
      */
     private $commandRunner;
@@ -33,11 +38,13 @@ class PlatformSpecificDescRunner implements DescRunner
     public function __construct(
         CommandRunner $commandRunner,
         CachingExecutableFinder $executableFinder,
-        $phpspecPath
+        $phpspecPath,
+        $phpspecConfig
     ) {
         $this->commandRunner = $commandRunner;
         $this->executableFinder = $executableFinder;
         $this->phpspecPath = $phpspecPath;
+        $this->phpspecConfig = $phpspecConfig;
     }
 
     /**
@@ -52,7 +59,34 @@ class PlatformSpecificDescRunner implements DescRunner
     {
         $this->commandRunner->runCommand(
             $this->executableFinder->getExecutablePath(),
-            [$this->phpspecPath, self::COMMAND_NAME, $className]
+            $this->getCommandArguments($className)
         );
+    }
+
+    /**
+     * @param $className
+     *
+     * @return array
+     */
+    private function getCommandArguments($className)
+    {
+        $commandArguments = [$this->phpspecPath, self::COMMAND_NAME];
+        $commandArguments = array_merge($commandArguments, $this->composeConfigOption());
+        array_push($commandArguments, $className);
+
+        return $commandArguments;
+    }
+
+    /**
+     * @return array
+     */
+    private function composeConfigOption()
+    {
+        $configOption = [];
+        if (!is_null($this->phpspecConfig)) {
+            array_push($configOption, '--config', $this->phpspecConfig);
+        }
+
+        return $configOption;
     }
 }

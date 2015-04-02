@@ -32,4 +32,5 @@ default:
   extensions:
     RMiller\PhpSpecExtension\PhpSpecExtension:
       path:  bin/phpspec #default value is bin/phpspec
+      config:  path/to/phpspec.yml #optional
 ```
