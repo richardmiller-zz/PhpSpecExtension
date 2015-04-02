@@ -33,7 +33,7 @@ class PhpSpecExtension implements ExtensionInterface
             ->addDefaultsIfNotSet()
             ->children()
                 ->scalarNode('path')->defaultValue('bin/phpspec')->end()
-                ->scalarNode('config')->defaultNull()->end()
+                ->scalarNode('config')->defaultValue('phpspec.yml')->end()
             ->end()
         ->end();
     }
