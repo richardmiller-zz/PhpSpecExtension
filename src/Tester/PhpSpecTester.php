@@ -9,23 +9,29 @@ use Behat\Testwork\Tester\Setup\Setup;
 use Behat\Testwork\Tester\Setup\Teardown;
 use Behat\Testwork\Tester\SuiteTester;
 use Rmiller\PhpSpecExtension\Process\DescRunner;
-use Symfony\Component\Console\Helper\DialogHelper;
+use Symfony\Component\Console\Helper\QuestionHelper;
 use Symfony\Component\Console\Helper\FormatterHelper;
 use Symfony\Component\Console\Output\OutputInterface;
+use Symfony\Component\Console\Input\InputInterface;
+use Symfony\Component\Console\Question\Question;
+use Symfony\Component\Console\Question\ConfirmationQuestion;
 
 class PhpSpecTester implements SuiteTester
 {
     private $baseTester;
     private $specRunner;
     private $output;
+    private $input;
 
     public function __construct(
         SuiteTester $baseTester,
         DescRunner $specRunner,
+        InputInterface $input,
         OutputInterface $output
     ) {
         $this->baseTester = $baseTester;
         $this->specRunner = $specRunner;
+        $this->input = $input;
         $this->output = $output;
     }
 
@@ -82,11 +88,11 @@ class PhpSpecTester implements SuiteTester
             $this->output->writeln('');
 
             $question = sprintf('Do you want to create a specification for %s? (Y/n)', $class);
-            $questionBlock = $formatter->formatBlock($question, 'question', true);
+            $questionBlock = new ConfirmationQuestion($formatter->formatBlock($question, 'question', true));
 
-            $dialog = new DialogHelper();
+            $dialog = new QuestionHelper();
 
-            if ($dialog->askConfirmation($this->output, $questionBlock, true)) {
+            if ($dialog->ask($this->input, $this->output, $questionBlock)) {
                 $this->output->writeln('');
                 $this->specRunner->runDescCommand($class);
             }
