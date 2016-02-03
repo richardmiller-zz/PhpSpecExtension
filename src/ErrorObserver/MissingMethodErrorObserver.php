@@ -1,6 +1,6 @@
 <?php
 
-namespace Rmiller\PhpSpecExtension\ErrorObserver;
+namespace RMiller\PhpSpecExtension\ErrorObserver;
 
 use RMiller\ErrorExtension\Observer\ErrorObserver;
 use RMiller\PhpSpecExtension\Process\ExemplifyRunner;
